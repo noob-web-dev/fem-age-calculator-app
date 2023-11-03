@@ -1,0 +1,33 @@
+button {
+  background-color: var(--clr-primary-purple);
+  overflow: hidden;
+  border-radius: 6rem;
+  width: clamp(3rem, 10%, 6rem);
+
+  margin: 0 0 0 auto;
+  /* center children */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  bottom: 0;
+
+  transform: translateY(50%);
+
+  & > * {
+    width: 50%;
+    aspect-ratio: inherit, 1;
+  }
+  aspect-ratio: 1;
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus-visible,
+  &:active {
+    background-color: var(--clr-neutral-black-100);
+  }
+
+  @media (--sm-viewport) {
+    margin: 0 auto;
+  }
+}

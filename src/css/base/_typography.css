@@ -1,0 +1,13 @@
+@font-face {
+  font-family: poppins;
+  src: url(/assets/fonts/Poppins-Regular.ttf),
+    url(/assets/fonts/Poppins-Italic.ttf), url(/assets/fonts/Poppins-Bold.ttf),
+    url(/assets/fonts/Poppins-BoldItalic.ttf),
+    url(/assets/fonts/Poppins-ExtraBold.ttf),
+    url(/assets/fonts/Poppins-ExtraBoldItalic.ttf);
+}
+
+body {
+  font-family: poppins, sans-serif;
+  font-size: 1rem;
+}

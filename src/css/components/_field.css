@@ -1,0 +1,17 @@
+.field {
+  color: var(--clr-neutral-grey-400);
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  gap: 0.3rem;
+}
+
+.err--clr {
+  color: var(--clr-primary-lightRed);
+}
+
+.err--msg::after {
+  content: "error message";
+  color: var(--clr-primary-lightRed);
+  font-size: 0.75em;
+}

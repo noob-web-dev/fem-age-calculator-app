@@ -1,0 +1,16 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  color: var(--clr-neutral-black-100);
+  .attribution {
+    font-size: 11px;
+    padding: 2em;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+}

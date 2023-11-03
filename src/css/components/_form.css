@@ -1,0 +1,6 @@
+form {
+  /* padding: 1rem 0; */
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid var(--clr-neutral-grey-400);
+}
