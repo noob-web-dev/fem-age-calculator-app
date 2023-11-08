@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
@@ -16,26 +14,41 @@
 
     <link rel="stylesheet" href="./src/css/style.css" />
     <script type="module" src="./src/js/main.js"></script>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style></style>
   </head>
   <body>
     <main>
-      <div class="app">
+      <div>
         <form action="">
-          <div class="flex">
-            <div class="field">
-              <label for=""> Day </label>
-              <input type="text" name="" id="" placeholder="DD" />
+          <div>
+            <div>
+              <label for="day"> Day </label>
+              <input
+                type="number"
+                name="day"
+                id="day"
+                placeholder="DD"
+                inputmode="numeric"
+              />
             </div>
-            <div class="field">
-              <label for=""> Month </label>
-              <input type="text" name="" id="" placeholder="MM" />
+            <div>
+              <label for="month"> Month </label>
+              <input
+                type="number"
+                name="month"
+                id="month"
+                placeholder="MM"
+                inputmode="numeric"
+              />
             </div>
-            <div class="field">
-              <label for=""> Year </label>
-              <input type="text" name="" id="" placeholder="YYYY" />
+            <div>
+              <label for="year"> Year </label>
+              <input
+                type="number"
+                name="year"
+                id="year"
+                placeholder="YYYY"
+                inputmode="numeric"
+              />
             </div>
           </div>
           <button><img src="./assets/images/icon-arrow.svg" alt="" /></button>

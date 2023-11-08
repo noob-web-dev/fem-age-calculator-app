@@ -1,20 +1,188 @@
-/* abstracts */
-@import "./abstracts/_customProperties.css";
-@import "./abstracts/_customMedia.css";
+html {
+  user-select: none;
+  box-sizing: border-box;
+}
 
-/* css base */
-@import "./base/_reset.css";
-@import "./base/_typography.css";
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Off-black: hsl(0, 0%, 8%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+}
 
-/* components */
-@import "./components/_body.css";
-@import "./components/_app.css";
-@import "./components/_form.css";
-@import "./components/_field.css";
-@import "./components/_input.css";
-@import "./components/_button.css";
-@import "./components/_output.css";
-@import "./components/_footer.css";
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
 
-/* layouts */
-@import "./layout/_formLayout.css";
+  user-select: inherit;
+  box-sizing: inherit;
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--Light-grey);
+}
+main {
+  min-height: 90vh;
+  position: relative;
+}
+
+main > div {
+  background-color: var(--White);
+  container-type: inline-size;
+  padding: min(3rem, 5%) min(4rem, 10%);
+  min-width: 300px;
+  width: 60%;
+  max-width: 700px;
+  border-radius: 1.5rem;
+  border-bottom-right-radius: 6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  /* outline: 1px solid red; */
+}
+
+form {
+  position: relative;
+  border-bottom: 1px solid var(--Smokey-grey);
+  padding-block: 2em;
+  & > div {
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+div:has(> input) {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+
+div:has(> input[data-err="true"]) {
+  color: var(--Light-red);
+  & input {
+    color: var(--Light-red);
+    border-color: var(--Light-red);
+  }
+  & input::placeholder {
+    color: var(--Light-red);
+  }
+  &::after {
+    padding-inline: 0.2em;
+    display: block;
+    width: 100%;
+    font-size: 11px;
+  }
+}
+
+div:has(> input[data-empty="true"]) {
+  &::after {
+    content: "this field is required";
+  }
+}
+div:has(> input[data-invalid="true"]) {
+  &::after {
+    content: "this field is invalid";
+  }
+}
+label {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+input {
+  width: 100%;
+  font-size: 2rem;
+  max-width: 6ch;
+  padding-inline: 0.25em;
+  padding-block: 0.1em;
+  border: 2px solid var(--Smokey-grey);
+  border-radius: 0.25em;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  display: none;
+}
+
+input::placeholder {
+  font-size: 1.5rem;
+}
+
+input:hover {
+  cursor: pointer;
+}
+input:active,
+input:active::placeholder {
+  color: var(--Purple);
+  border-color: var(--Purple);
+}
+
+input:focus::placeholder,
+input:focus {
+  color: var(--Purple);
+  border-color: var(--Purple);
+}
+
+button {
+  width: 3rem;
+  aspect-ratio: 1;
+  border-radius: 3rem;
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  background-color: var(--Purple);
+  transform: translateX(50%) translateY(50%);
+  &:hover {
+    cursor: pointer;
+  }
+  &:hover,
+  &:focus-visible,
+  &:active {
+    background-color: var(--Off-black);
+  }
+
+  & > * {
+    width: 60%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+@container (min-width: 500px) {
+  button {
+    transform: translateY(50%);
+    right: 0;
+  }
+}
+
+output {
+  font-size: 48px;
+  font-weight: 800;
+  font-style: italic;
+  & span {
+    color: var(--Purple);
+  }
+}
+
+footer {
+  position: fixed;
+  font-size: 14px;
+  display: block;
+  width: 100%;
+}
+footer > * {
+  padding: 3em 0;
+  text-align: center;
+}

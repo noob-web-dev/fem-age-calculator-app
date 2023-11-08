@@ -1,9 +1,0 @@
-.flex {
-  max-width: 34rem;
-  /* width: clamp(); */
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-
-  gap: 1vh;
-}
