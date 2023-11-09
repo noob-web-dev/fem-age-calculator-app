@@ -1,6 +1,41 @@
+@font-face {
+  font-family: poppins;
+  src: url(/assets/fonts/Poppins-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: poppins;
+  src: url(/assets/fonts/Poppins-Italic.ttf);
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: poppins;
+  src: url(/assets/fonts/Poppins-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: poppins;
+  src: url(/assets/fonts/Poppins-BoldItalic.ttf);
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: poppins;
+  src: url(/assets/fonts/Poppins-ExtraBold.ttf);
+  font-weight: 800;
+}
+@font-face {
+  font-family: poppins;
+  src: url(/assets/fonts/Poppins-ExtraBoldItalic.ttf);
+  font-weight: 800;
+  font-style: italic;
+}
+
 html {
   user-select: none;
   box-sizing: border-box;
+  font-family: poppins;
 }
 
 :root {
@@ -96,7 +131,9 @@ div:has(> input[data-invalid="true"]) {
   }
 }
 label {
+  color: var(--Smokey-grey);
   text-transform: uppercase;
+  font-weight: 700;
   letter-spacing: 0.15em;
 }
 input {
@@ -168,8 +205,10 @@ button {
 }
 
 output {
+  display: block;
   font-size: 48px;
   font-weight: 800;
+  padding-block: 1em;
   font-style: italic;
   & span {
     color: var(--Purple);
